@@ -1,0 +1,229 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url("desk.jpg");
+    background-size: cover;
+    background-position:0 -200px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+}
+
+
+.wrapper{
+    background-color: rgb(0, 100, 0);
+    text-align: center;
+}
+
+.logo{
+    position: absolute;
+    left: 25px;
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    line-height: 60px;
+    color: white;
+    cursor: pointer;
+    transition: all 1.5s ease-in-out ;
+    animation: move 3s infinite linear;
+}
+    @keyframes move {
+        0%{
+            transform:scale(1)
+        }
+        100%{
+            transform:scale(1.5)
+        }
+    }
+
+
+.desk{
+    right: 10px;
+    position: relative;
+    margin-left: 700px;
+}
+
+.desk ul {
+    list-style: none;
+    line-height: 55px;
+    display: inline-flex;
+
+}
+
+
+.desk ul li{
+    display: inline-block;
+    margin-left: 30px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.desk ul li:hover{
+    color: cyan;
+    transform: scale(1.10);
+}
+
+.submenu,.submenu2{
+    display: none;
+}
+
+.submenu ul,.submenu2 ul{
+    display: block;
+    line-height: 50px;
+
+}
+.submenu2 ul{
+    position: absolute;
+    left: 95px;
+    top: -30px;
+    margin-left: -10px;
+    background-color: rgb(0, 100, 0);
+    transition: all 2s ease-in-out;
+}
+.submenu2 ul li{
+    position: relative;
+    line-height: 30px;
+    font-size: 16px;
+    margin-bottom: 10px;
+
+}
+.submenu ul li,.submenu2 ul li{
+    display: block;
+    padding: 2px;
+    text-align: center;
+    margin: 0 10px;
+    width: 70px;
+    margin-bottom: 10px;
+    height: 50px;
+    font-size: 16px;
+    border-bottom: 1px solid rgb(73, 65, 65);
+    z-index: 1;
+}
+
+.submenu ul li:last-child,.submenu2 ul li:last-child{
+    border-bottom: 0;
+
+}
+
+.desk ul li:hover .submenu,.submenu li:hover .submenu2
+    {
+    display: block;
+    position: absolute;
+    margin-top: -15px;
+    margin-left: -15px;
+    background-color: rgb(0, 100, 0);
+    transition: all 2s ease-in-out;
+    transform: scale(0.90);
+}
+
+.container .text{
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    z-index:-4;
+
+}
+
+.container .text h2{
+    top: -40px;
+    font-size: 34px;
+    left: -10px;
+    position: absolute;
+    font-family: serif;
+    color: rgb(0, 100, 0);
+    line-height: 80px;
+    animation:bounce 1s infinite alternate;
+}
+
+.container .text h3{
+    width: 300px;
+    font-size: 28px;
+    font-family: serif;
+    color: rgb(15, 17, 15);
+    line-height: 40px;
+    padding-left: 40px;
+    margin-top: 35px;
+}
+
+.container .text h3::before{
+    content: "";
+    position: absolute;
+    width:300px;
+    margin-left: 40px;
+    height: 35px;
+    background-color: #e6ebe6;
+    border-left: 2px  solid rgb(4, 182, 4) ;
+    transition: all 1.5s ease-in-out;
+    animation: type 5s  steps(17) infinite;
+}
+
+@keyframes type{
+    0%{
+        left: 0;
+    }
+    100%{
+        left: 260px;
+    }
+}
+
+
+@keyframes bounce{
+    0%{
+        margin-top: 0;
+        opacity: 0.2;
+    }
+    100%{
+        margin-top: -10px;
+        opacity: 1;
+    }
+}
+
+.text .search{
+    line-height: 30px;
+    padding-top: 0px;
+    margin-left: 60px;
+    width: 260px;
+    height: 30px;
+}
+
+
+.search .search-bar{
+    width: 260px;
+    height: 30px;
+    border: 0;
+    outline: 0;
+    margin-top: 15px;
+    padding: 0 6px;
+    position: relative;
+    line-height: 40px;
+    border-radius: 10px 0px 0 10px;
+
+}
+
+.search::before{
+    content: "search";
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    margin: auto 54px;
+    left: 50%;
+    margin-top: 30px;
+    font-size: 18px;
+    border:0 ;
+    border-radius: 0px 10px 10px 0;
+    outline: 0;
+    cursor: pointer;
+    text-align: center;
+    color: rgb(5, 153, 12);
+    transform: translate(-50%,-50%);
+    background-color: rgb(221, 213, 213);
+    
+}
